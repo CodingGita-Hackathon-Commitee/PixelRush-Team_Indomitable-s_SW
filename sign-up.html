@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff8f1" />
+  <title>PawPal — Create your account</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="1-page.css" />
+</head>
+<body>
+  <main class="signup-layout">
+    <section class="welcome-panel" aria-label="PawPal introduction">
+      <a class="brand" href="#" aria-label="PawPal home">
+        <span class="brand-mark" aria-hidden="true">🐾</span>
+        <span class="brand-copy"><strong>PawPal</strong><small>CARE &amp; TRIAGE</small></span>
+      </a>
+
+      <div class="welcome-content">
+        <div class="pet-wrap">
+          <div class="pet-portrait" aria-label="A friendly golden dog" role="img"><span>🐶</span></div>
+          <div class="priority-badge"><i></i>24/7 Priority Desk</div>
+        </div>
+        <h1>Care for Biscuit, anytime.</h1>
+        <p>Join the 24/7 priority emergency veterinary network in<br class="desktop-break" /> seconds. Seamless handoff between clinical triage and<br class="desktop-break" /> your family.</p>
+      </div>
+
+      <div class="trust-pill"><span aria-hidden="true">✿</span> Emergency triage is always 100% free</div>
+    </section>
+
+    <section class="form-panel" aria-label="Create your PawPal account">
+      <button class="back-button" type="button" aria-label="Go back"><span>←</span></button>
+      <div class="form-card">
+        <header class="form-heading">
+          <h2>Create your account</h2>
+          <p>It takes less than a minute.</p>
+        </header>
+
+        <form action="#" method="get">
+          <label for="name">Your name</label>
+          <div class="input-wrap"><span class="field-icon" aria-hidden="true">♙</span><input id="name" name="name" type="text" placeholder="Riya Sharma" autocomplete="name" required /></div>
+
+          <label for="email">Email</label>
+          <div class="input-wrap"><span class="field-icon envelope" aria-hidden="true">✉️</span><input id="email" name="email" type="email" placeholder="riya@example.com" autocomplete="email" required /></div>
+
+          <label for="password">Password</label>
+          <div class="input-wrap"><span class="field-icon" aria-hidden="true">♙</span><input id="password" name="password" type="password" placeholder="Create a strong password" autocomplete="new-password" minlength="8" required /><button class="show-password" type="button" aria-label="Show password">◉</button></div>
+          <p class="hint">At least 8 characters with a number or symbol</p>
+
+          <div class="intake-note"><span aria-hidden="true">🐾</span> Add your pet later · Emergency intake is instant</div>
+          <button class="submit-button" type="submit">Create account <span aria-hidden="true">→</span></button>
+        </form>
+
+        <p class="legal">By signing up, you agree to PawPal's <a href="#terms">Terms of Service</a> and<br /><a href="#privacy">Privacy Policy</a></p>
+        <div class="card-divider"></div>
+        <p class="login-prompt">Already have an account? <a href="#login">Log in</a></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
