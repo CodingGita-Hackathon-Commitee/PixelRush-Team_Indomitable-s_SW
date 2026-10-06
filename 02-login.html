@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff8f1" />
+  <title>PawPal — Log in</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="02-login.css" />
+</head>
+<body>
+  <main class="login-layout">
+    <section class="welcome-panel" aria-label="PawPal introduction">
+      <a class="brand" href="index.html" aria-label="PawPal home">
+        <span class="brand-mark" aria-hidden="true">🐾</span>
+        <span class="brand-copy"><strong>PawPal</strong><small>VETERINARY CARE &amp; TRIAGE</small></span>
+      </a>
+      <div class="welcome-content">
+        <div class="pet-wrap">
+          <div class="pet-portrait" role="img" aria-label="A friendly golden dog"><span>🐶</span></div>
+          <div class="priority-badge"><i></i>Triage Ready</div>
+        </div>
+        <h1>Care for Biscuit, anytime.</h1>
+        <p>24/7 instant veterinary triage, priority network clinic<br class="desktop-break" /> matching, and seamless pet health records.</p>
+      </div>
+      <div class="trust-pill"><span aria-hidden="true">✿</span> Trusted by 14,000+ pet parents across Gujarat</div>
+    </section>
+
+    <section class="form-panel" aria-label="Log in to PawPal">
+      <div class="login-card">
+        <span class="secure-tag">Secure Portal</span>
+        <header class="form-heading">
+          <h2>Welcome back</h2>
+          <p>Enter your credentials to access Biscuit's health<br class="desktop-break" /> portal.</p>
+        </header>
+        <form action="#" method="get">
+          <label for="email">Email</label>
+          <div class="input-wrap"><span class="field-icon envelope" aria-hidden="true">✉</span><input id="email" name="email" type="email" placeholder="riya@example.com" autocomplete="email" required /></div>
+          <div class="password-label"><label for="password">Password</label><a href="#forgot">Forgot password?</a></div>
+          <div class="input-wrap"><span class="field-icon" aria-hidden="true">♙</span><input id="password" name="password" type="password" value="secretbiscuit123" autocomplete="current-password" required /><button class="show-password" type="button" aria-label="Show password">◉</button></div>
+          <button class="submit-button" type="submit">Log in <span aria-hidden="true">→</span></button>
+        </form>
+        <div class="separator"><span></span><small>or continue with</small><span></span></div>
+        <div class="social-buttons">
+          <a class="social-button" href="#google"><span class="google-mark" aria-hidden="true">G</span>Google</a>
+          <a class="social-button" href="#apple"><span class="apple-mark" aria-hidden="true">●</span>Apple</a>
+        </div>
+        <p class="signup-prompt">New to PawPal? <a href="index.html">Create account</a></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
