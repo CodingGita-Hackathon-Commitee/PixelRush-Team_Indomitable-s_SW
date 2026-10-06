@@ -1,119 +1,1286 @@
-:root { font-family: "DM Sans", "Segoe UI", sans-serif; color: #382b27; background: #b6c5ff; font-synthesis: none; text-rendering: optimizeLegibility; --burnt: #c7472b; --muted: #8b756d; --blush: #fff0e9; }
-* { box-sizing: border-box; }
-body { margin: 0; min-width: 320px; min-height: 100vh; display: grid; place-items: center; padding: 8px; }
-a { color: inherit; text-decoration: none; }
-button { font: inherit; }
-.app-shell { width: min(100%, 1200px); min-height: min(660px, calc(100vh - 16px)); display: grid; grid-template-columns: 185px minmax(0, 1fr); background: #fff9f6; border: 1px solid #e9dcd5; }
-.sidebar { position: relative; display: flex; flex-direction: column; padding: 21px 20px; border-right: 1px solid #f1e3dd; background: #fff; }
-.brand { display: flex; align-items: center; gap: 8px; width: fit-content; margin: 0 0 27px 2px; }
-.brand-mark { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; background: #ffede3; color: var(--burnt); font-size: 11px; }
-.brand strong { font-size: 15px; letter-spacing: -.04em; }
-.sidebar nav { display: grid; gap: 7px; }
-.nav-item { height: 34px; display: flex; align-items: center; gap: 9px; padding: 0 9px; border-radius: 9px; color: #604e47; font-size: 11px; }
-.nav-item span { width: 14px; text-align: center; font-size: 13px; }
-.nav-item.active { background: #fff7f2; color: #6e4538; }
-.sidebar-switch { position: absolute; bottom: 57px; left: 20px; right: 20px; display: flex; justify-content: center; align-items: center; gap: 6px; padding: 5px; border: 1px solid #f5d9ce; border-radius: 20px; background: #fff4ee; color: #765c51; font-size: 9px; }
-.profile { position: absolute; left: 20px; bottom: 17px; display: flex; align-items: center; gap: 8px; font-size: 9px; }
-.profile > span:last-child { display: grid; gap: 1px; }
-.profile strong { font-size: 9px; }
-.profile small { color: var(--muted); font-size: 8px; }
-.avatar { position: relative; width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; background: #f1d1b9; font-size: 18px; }
-.avatar i { position: absolute; right: -1px; bottom: 0; width: 9px; height: 9px; border: 1px solid white; border-radius: 50%; background: #159d75; }
-.avatar-small { width: 21px; height: 21px; font-size: 13px; }
-.dashboard { padding: 16px 35px 32px; }
-.topbar { height: 23px; display: flex; align-items: center; justify-content: space-between; }
-.status { display: flex; align-items: center; gap: 6px; margin: 0; color: #59453d; font-size: 9px; }
-.status i, .fast-track i { width: 6px; height: 6px; border-radius: 50%; background: #ae3c25; }
-.top-actions { display: flex; gap: 11px; }
-.top-actions button { width: 25px; height: 25px; display: grid; place-items: center; border: 1px solid #f2e4dd; border-radius: 50%; background: #fff; color: #684f46; font-size: 12px; cursor: pointer; }
-.page-heading { display: flex; justify-content: space-between; align-items: center; margin: 16px 0 17px; }
-.page-heading h1 { margin: 0 0 2px; font-size: 19px; letter-spacing: -.04em; }
-.page-heading p { margin: 0; color: var(--muted); font-size: 11px; }
-.user-actions { display: flex; align-items: center; gap: 12px; }
-.switch-button { display: flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 20px; background: #fff; color: #57483f; font-size: 9px; font-weight: 600; }
-.switch-button span { color: var(--burnt); }
-.content-grid { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(190px, .9fr); gap: 18px; }
-.pet-card { min-height: 249px; display: flex; flex-direction: column; padding: 20px 20px 18px; border-radius: 22px; background: linear-gradient(125deg, #ffebe2, #ffe9df); }
-.pet-card-top { display: flex; justify-content: space-between; align-items: center; }
-.fast-track { display: flex; align-items: center; gap: 6px; color: #76594f; font-size: 8px; letter-spacing: .025em; }
-.step-tag { padding: 5px 9px; border-radius: 15px; background: #fff; color: #816c63; font-size: 8px; }
-.pet-card-main { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 0 5px; }
-.pet-profile { position: relative; display: flex; align-items: center; gap: 10px; }
-.pet-photo { width: 95px; height: 95px; display: grid; place-items: center; border: 3px solid white; border-radius: 50%; background: radial-gradient(circle, #fff0da, #f6dcba); }
-.pet-photo span { font-size: 55px; }
-.paw-stamp { position: absolute; right: -3px; bottom: 0; width: 21px; height: 21px; display: grid; place-items: center; border: 2px solid white; border-radius: 50%; background: #fff; color: var(--burnt); font-size: 11px; }
-.pet-meta h2 { margin: 0 0 5px; font-size: 20px; letter-spacing: -.05em; }
-.health-tag { display: inline-block; padding: 4px 8px; border-radius: 12px; background: #f8dbd0; color: #4c3128; font-size: 8px; }
-.help-area { text-align: center; }
-.help-button { min-width: 157px; min-height: 47px; display: flex; align-items: center; justify-content: space-between; gap: 9px; padding: 7px 13px; border-radius: 30px; background: var(--burnt); color: #fff; box-shadow: 0 4px 8px #96391f29; font-size: 11px; font-weight: 600; line-height: 1.25; }
-.help-button b { font-size: 16px; font-weight: 400; }
-.heart { width: 25px; height: 25px; display: grid; place-items: center; border-radius: 50%; background: #df765e; font-size: 12px; }
-.help-area p { margin: 7px 0 0; color: #745b51; font-size: 8px; line-height: 1.4; }
-.pet-details { display: flex; align-items: center; gap: 10px; color: #725d53; font-size: 8px; }
-.pet-details i { color: #d8b9a9; font-style: normal; }
-.upcoming-heading { height: 29px; display: flex; justify-content: space-between; align-items: flex-start; }
-.upcoming-heading h2 { margin: 1px 0 0; font-size: 15px; letter-spacing: -.035em; }
-.upcoming-heading > span { padding: 3px 8px; border-radius: 12px; background: #ffe5d9; color: #6e4538; font-size: 8px; }
-.reminder { min-height: 68px; display: flex; align-items: center; gap: 11px; margin-bottom: 9px; padding: 10px 13px; border-radius: 22px; background: #fff1eb; }
-.reminder-icon { width: 32px; height: 32px; flex: 0 0 32px; display: grid; place-items: center; border-radius: 50%; background: #ffdfce; color: #76584d; font-size: 14px; }
-.reminder-icon.vaccine { background: #f7ddd4; }
-.reminder h3 { margin: 0 0 2px; font-size: 11px; font-weight: 600; }
-.reminder p { margin: 0; color: #806d63; font-size: 9px; line-height: 1.35; }
-.clinic-banner { grid-column: 1 / -1; min-height: 63px; display: flex; align-items: center; gap: 12px; margin-top: 1px; padding: 10px 20px; border-radius: 23px; background: #fff; }
-.clinic-symbol { width: 31px; height: 31px; flex: 0 0 31px; display: grid; place-items: center; border-radius: 50%; background: var(--burnt); color: #fff; font-size: 18px; }
-.clinic-copy { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; font-size: 10px; }
-.clinic-copy strong { white-space: nowrap; }
-.clinic-copy > span { color: #806d63; white-space: nowrap; }
-.clinic-copy small { display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px; border-radius: 12px; background: #ffe7dc; color: #695348; font-size: 8px; white-space: nowrap; }
-.clinic-copy small i { width: 5px; height: 5px; border-radius: 50%; background: #20a77e; }
-.clinic-banner > a { color: var(--burnt); font-size: 10px; font-weight: 600; white-space: nowrap; }
-.clinic-banner > a span { margin-left: 3px; font-size: 14px; }
-.mobile-break { display: none; }
 
-@media (max-width: 850px) {
-  .app-shell { grid-template-columns: 155px minmax(0, 1fr); }
-  .dashboard { padding-inline: 24px; }
-  .content-grid { grid-template-columns: minmax(0, 1.4fr) minmax(170px, .9fr); gap: 13px; }
-  .pet-card { padding-inline: 15px; }
-  .pet-photo { width: 78px; height: 78px; }
-  .pet-photo span { font-size: 45px; }
-  .help-button { min-width: 132px; }
-  .clinic-copy { flex-wrap: wrap; gap: 4px 8px; }
+:root {
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  color: #382b27;
+  background: #b6c5ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --burnt: #c7472b;
+  --muted: #8b756d;
+  --blush: #fff0e9;
 }
-@media (max-width: 650px) {
-  body { display: block; padding: 0; }
-  .app-shell { width: 100%; min-height: 100vh; grid-template-columns: 1fr; border: 0; }
-  .sidebar { min-height: 55px; flex-direction: row; align-items: center; justify-content: space-between; padding: 10px 16px; border-right: 0; border-bottom: 1px solid #f1e3dd; }
-  .brand { margin: 0; }
-  .sidebar nav { display: flex; gap: 2px; }
-  .nav-item { height: 32px; gap: 4px; padding: 0 7px; font-size: 9px; }
-  .sidebar-switch, .profile { display: none; }
-  .dashboard { padding: 16px 18px 30px; }
-  .page-heading { margin: 16px 0; }
-  .switch-button { font-size: 0; padding: 9px; }
-  .switch-button span { font-size: 14px; }
-  .avatar { width: 29px; height: 29px; }
-  .content-grid { grid-template-columns: 1fr; }
-  .pet-card { min-height: 235px; }
-  .upcoming { display: grid; grid-template-columns: 1fr; }
-  .reminder { min-height: 60px; }
-  .clinic-banner { grid-column: 1; flex-wrap: wrap; padding: 13px; }
-  .clinic-copy { flex: 1 1 calc(100% - 50px); }
-  .clinic-copy > span { white-space: normal; }
-  .clinic-banner > a { margin-left: 43px; }
+
+* {
+  box-sizing: border-box;
 }
-@media (max-width: 420px) {
-  .brand strong { font-size: 13px; }
-  .nav-item { flex-direction: column; justify-content: center; gap: 0; height: 38px; padding: 2px 6px; font-size: 8px; }
-  .dashboard { padding-inline: 13px; }
-  .pet-card { padding: 15px 13px; }
-  .pet-card-main { gap: 4px; }
-  .pet-profile { gap: 7px; }
-  .pet-photo { width: 68px; height: 68px; }
-  .pet-photo span { font-size: 40px; }
-  .pet-meta h2 { font-size: 17px; }
-  .help-button { min-width: 118px; gap: 5px; padding-inline: 9px; font-size: 10px; }
-  .pet-details { flex-wrap: wrap; gap: 5px 8px; }
-  .user-actions { gap: 7px; }
-  .mobile-break { display: initial; }
+
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+
+/* ================================
+   APP
+================================ */
+
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+
+  background: #fff9f6;
+}
+
+
+/* ================================
+   SIDEBAR
+================================ */
+
+.sidebar {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px 24px;
+
+  border-right: 1px solid #f1e3dd;
+  background: #ffffff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  width: fit-content;
+  margin: 0 0 35px 2px;
+}
+
+.brand-mark {
+  width: 28px;
+  height: 28px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  background: #ffede3;
+
+  color: var(--burnt);
+  font-size: 13px;
+}
+
+.brand strong {
+  font-size: 18px;
+  letter-spacing: -0.04em;
+}
+
+
+/* NAVIGATION */
+
+.sidebar nav {
+  display: grid;
+  gap: 8px;
+}
+
+.nav-item {
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 0 12px;
+
+  border-radius: 10px;
+
+  color: #604e47;
+  font-size: 13px;
+}
+
+.nav-item span {
+  width: 17px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.nav-item:hover {
+  background: #fff7f2;
+}
+
+.nav-item.active {
+  background: #fff7f2;
+  color: #6e4538;
+  font-weight: 600;
+}
+
+
+/* SIDEBAR SWITCH */
+
+.sidebar-switch {
+  position: absolute;
+
+  bottom: 75px;
+  left: 24px;
+  right: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+
+  padding: 9px 8px;
+
+  border: 1px solid #f5d9ce;
+  border-radius: 22px;
+
+  background: #fff4ee;
+  color: #765c51;
+
+  font-size: 11px;
+}
+
+.sidebar-switch:hover {
+  background: #ffebe2;
+}
+
+
+/* PROFILE */
+
+.profile {
+  position: absolute;
+
+  left: 24px;
+  bottom: 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  font-size: 11px;
+}
+
+.profile > span:last-child {
+  display: grid;
+  gap: 2px;
+}
+
+.profile strong {
+  font-size: 11px;
+}
+
+.profile small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+
+/* ================================
+   AVATAR
+================================ */
+
+.avatar {
+  position: relative;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  background: #f1d1b9;
+
+  font-size: 21px;
+}
+
+.avatar i {
+  position: absolute;
+
+  right: -1px;
+  bottom: 0;
+
+  width: 10px;
+  height: 10px;
+
+  border: 2px solid white;
+  border-radius: 50%;
+
+  background: #159d75;
+}
+
+.avatar-small {
+  width: 27px;
+  height: 27px;
+
+  font-size: 16px;
+}
+
+
+/* ================================
+   DASHBOARD
+================================ */
+
+.dashboard {
+  min-width: 0;
+
+  padding: 24px 5vw 40px;
+}
+
+
+/* ================================
+   TOP BAR
+================================ */
+
+.topbar {
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin: 0;
+
+  color: #59453d;
+  font-size: 11px;
+}
+
+.status i,
+.fast-track i {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+  background: #ae3c25;
+}
+
+.top-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.top-actions button {
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #f2e4dd;
+  border-radius: 50%;
+
+  background: #fff;
+  color: #684f46;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+
+/* ================================
+   HEADING
+================================ */
+
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 25px 0 24px;
+}
+
+.page-heading h1 {
+  margin: 0 0 4px;
+
+  font-size: clamp(22px, 2vw, 30px);
+  letter-spacing: -0.04em;
+}
+
+.page-heading p {
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.switch-button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 10px 15px;
+
+  border-radius: 22px;
+
+  background: #fff;
+  color: #57483f;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.switch-button:hover {
+  background: #fff1eb;
+}
+
+.switch-button span {
+  color: var(--burnt);
+}
+
+
+/* ================================
+   CONTENT GRID
+================================ */
+
+.content-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.7fr)
+    minmax(260px, 0.9fr);
+
+  gap: 22px;
+}
+
+
+/* ================================
+   PET CARD
+================================ */
+
+.pet-card {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 24px;
+
+  border-radius: 24px;
+
+  background: linear-gradient(
+    125deg,
+    #ffebe2,
+    #ffe9df
+  );
+}
+
+.pet-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fast-track {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #76594f;
+
+  font-size: 10px;
+  letter-spacing: 0.025em;
+}
+
+.step-tag {
+  padding: 6px 10px;
+
+  border-radius: 15px;
+
+  background: #fff;
+  color: #816c63;
+
+  font-size: 9px;
+}
+
+.pet-card-main {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 15px 0;
+}
+
+.pet-profile {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.pet-photo {
+  width: clamp(90px, 9vw, 125px);
+  height: clamp(90px, 9vw, 125px);
+
+  display: grid;
+  place-items: center;
+
+  border: 4px solid white;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    #fff0da,
+    #f6dcba
+  );
+}
+
+.pet-photo span {
+  font-size: clamp(50px, 5vw, 72px);
+}
+
+.paw-stamp {
+  position: absolute;
+
+  right: -3px;
+  bottom: 0;
+
+  width: 25px;
+  height: 25px;
+
+  display: grid;
+  place-items: center;
+
+  border: 2px solid white;
+  border-radius: 50%;
+
+  background: #fff;
+  color: var(--burnt);
+
+  font-size: 12px;
+}
+
+.pet-meta h2 {
+  margin: 0 0 7px;
+
+  font-size: clamp(20px, 2vw, 27px);
+  letter-spacing: -0.05em;
+}
+
+.health-tag {
+  display: inline-block;
+
+  padding: 5px 9px;
+
+  border-radius: 12px;
+
+  background: #f8dbd0;
+  color: #4c3128;
+
+  font-size: 9px;
+}
+
+
+/* ================================
+   HELP BUTTON
+================================ */
+
+.help-area {
+  text-align: center;
+}
+
+.help-button {
+  min-width: 180px;
+  min-height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 8px 15px;
+
+  border-radius: 30px;
+
+  background: var(--burnt);
+  color: #fff;
+
+  box-shadow: 0 4px 8px #96391f29;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+
+  transition: transform 0.2s ease;
+}
+
+.help-button:hover {
+  transform: translateY(-2px);
+}
+
+.help-button b {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.heart {
+  width: 29px;
+  height: 29px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #df765e;
+
+  font-size: 13px;
+}
+
+.help-area p {
+  margin: 9px 0 0;
+
+  color: #745b51;
+
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+
+/* ================================
+   PET DETAILS
+================================ */
+
+.pet-details {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: #725d53;
+
+  font-size: 9px;
+}
+
+.pet-details i {
+  color: #d8b9a9;
+  font-style: normal;
+}
+
+
+/* ================================
+   UPCOMING
+================================ */
+
+.upcoming {
+  min-width: 0;
+}
+
+.upcoming-heading {
+  height: 34px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.upcoming-heading h2 {
+  margin: 2px 0 0;
+
+  font-size: 19px;
+  letter-spacing: -0.035em;
+}
+
+.upcoming-heading > span {
+  padding: 4px 9px;
+
+  border-radius: 12px;
+
+  background: #ffe5d9;
+  color: #6e4538;
+
+  font-size: 9px;
+}
+
+.reminder {
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 10px;
+  padding: 12px 15px;
+
+  border-radius: 22px;
+
+  background: #fff1eb;
+}
+
+.reminder:hover {
+  background: #ffece4;
+}
+
+.reminder-icon {
+  width: 36px;
+  height: 36px;
+
+  flex: 0 0 36px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #ffdfce;
+
+  color: #76584d;
+
+  font-size: 15px;
+}
+
+.reminder-icon.vaccine {
+  background: #f7ddd4;
+}
+
+.reminder h3 {
+  margin: 0 0 3px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.reminder p {
+  margin: 0;
+
+  color: #806d63;
+
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+
+/* ================================
+   CLINIC BANNER
+================================ */
+
+.clinic-banner {
+  grid-column: 1 / -1;
+
+  min-height: 75px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 2px;
+
+  padding: 13px 20px;
+
+  border-radius: 23px;
+
+  background: #fff;
+}
+
+.clinic-symbol {
+  width: 36px;
+  height: 36px;
+
+  flex: 0 0 36px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--burnt);
+  color: #fff;
+
+  font-size: 19px;
+}
+
+.clinic-copy {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  font-size: 11px;
+}
+
+.clinic-copy strong {
+  white-space: nowrap;
+}
+
+.clinic-copy > span {
+  color: #806d63;
+  white-space: nowrap;
+}
+
+.clinic-copy small {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 5px 9px;
+
+  border-radius: 12px;
+
+  background: #ffe7dc;
+  color: #695348;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+}
+
+.clinic-copy small i {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #20a77e;
+}
+
+.clinic-banner > a {
+  color: var(--burnt);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.clinic-banner > a span {
+  margin-left: 3px;
+  font-size: 15px;
+}
+
+.mobile-break {
+  display: none;
+}
+
+
+/* ================================
+   LARGE SCREENS
+================================ */
+
+@media (min-width: 1400px) {
+
+  .dashboard {
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+
+  .content-grid {
+    gap: 28px;
+  }
+
+  .pet-card {
+    min-height: 330px;
+  }
+}
+
+
+/* ================================
+   TABLET / SMALL LAPTOP
+================================ */
+
+@media (max-width: 1000px) {
+
+  .app-shell {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+
+  .sidebar {
+    padding-inline: 18px;
+  }
+
+  .sidebar-switch,
+  .profile {
+    left: 18px;
+    right: 18px;
+  }
+
+  .dashboard {
+    padding-inline: 30px;
+  }
+
+  .content-grid {
+    grid-template-columns:
+      minmax(0, 1.3fr)
+      minmax(220px, 0.9fr);
+
+    gap: 16px;
+  }
+
+  .pet-card {
+    padding: 20px;
+  }
+
+  .pet-card-main {
+    gap: 10px;
+  }
+
+  .help-button {
+    min-width: 145px;
+  }
+
+  .clinic-copy {
+    flex-wrap: wrap;
+    gap: 4px 8px;
+  }
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 750px) {
+
+  .app-shell {
+    grid-template-columns: 160px minmax(0, 1fr);
+  }
+
+  .dashboard {
+    padding-inline: 22px;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clinic-banner {
+    grid-column: 1;
+  }
+
+  .pet-card {
+    min-height: 280px;
+  }
+
+  .upcoming {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .upcoming-heading {
+    grid-column: 1 / -1;
+  }
+
+  .reminder {
+    min-height: 100px;
+    margin-bottom: 0;
+  }
+
+  .reminder-icon {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+  body {
+    background: #fff9f6;
+  }
+
+  .app-shell {
+    width: 100%;
+    min-height: 100vh;
+
+    display: block;
+
+    border: 0;
+  }
+
+
+  /* MOBILE NAV */
+
+  .sidebar {
+    width: 100%;
+    min-height: 62px;
+
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 16px;
+
+    border-right: 0;
+    border-bottom: 1px solid #f1e3dd;
+  }
+
+  .brand {
+    margin: 0;
+  }
+
+  .brand strong {
+    font-size: 16px;
+  }
+
+  .sidebar nav {
+    display: flex;
+    gap: 2px;
+  }
+
+  .nav-item {
+    min-height: 38px;
+
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 1px;
+
+    padding: 3px 7px;
+
+    font-size: 8px;
+  }
+
+  .nav-item span {
+    font-size: 12px;
+  }
+
+  .sidebar-switch,
+  .profile {
+    display: none;
+  }
+
+
+  /* DASHBOARD */
+
+  .dashboard {
+    width: 100%;
+    padding: 18px 16px 35px;
+  }
+
+  .topbar {
+    height: 28px;
+  }
+
+  .status {
+    font-size: 9px;
+  }
+
+  .top-actions {
+    gap: 7px;
+  }
+
+  .top-actions button {
+    width: 27px;
+    height: 27px;
+  }
+
+
+  /* HEADING */
+
+  .page-heading {
+    margin: 18px 0 20px;
+  }
+
+  .page-heading h1 {
+    font-size: 22px;
+  }
+
+  .page-heading p {
+    font-size: 12px;
+  }
+
+  .switch-button {
+    width: 34px;
+    height: 34px;
+
+    justify-content: center;
+
+    padding: 8px;
+
+    font-size: 0;
+  }
+
+  .switch-button span {
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 34px;
+    height: 34px;
+
+    font-size: 18px;
+  }
+
+
+  /* CONTENT */
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+
+  /* PET CARD */
+
+  .pet-card {
+    min-height: 255px;
+
+    padding: 17px;
+    border-radius: 21px;
+  }
+
+  .pet-card-main {
+    padding: 10px 0;
+
+    gap: 8px;
+  }
+
+  .pet-photo {
+    width: 75px;
+    height: 75px;
+  }
+
+  .pet-photo span {
+    font-size: 44px;
+  }
+
+  .pet-meta h2 {
+    font-size: 19px;
+  }
+
+  .help-button {
+    min-width: 130px;
+    min-height: 48px;
+
+    padding: 7px 10px;
+
+    font-size: 10px;
+  }
+
+  .heart {
+    width: 25px;
+    height: 25px;
+
+    font-size: 11px;
+  }
+
+  .help-button b {
+    font-size: 15px;
+  }
+
+  .help-area p {
+    font-size: 8px;
+  }
+
+  .pet-details {
+    flex-wrap: wrap;
+
+    gap: 5px 8px;
+
+    font-size: 8px;
+  }
+
+
+  /* UPCOMING */
+
+  .upcoming {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+  .upcoming-heading {
+    height: 30px;
+  }
+
+  .upcoming-heading h2 {
+    font-size: 17px;
+  }
+
+  .reminder {
+    min-height: 64px;
+
+    margin-bottom: 0;
+
+    border-radius: 19px;
+  }
+
+
+  /* CLINIC */
+
+  .clinic-banner {
+    grid-column: 1;
+
+    flex-wrap: wrap;
+
+    padding: 13px;
+
+    border-radius: 20px;
+  }
+
+  .clinic-symbol {
+    width: 32px;
+    height: 32px;
+
+    flex-basis: 32px;
+  }
+
+  .clinic-copy {
+    flex: 1 1 calc(100% - 48px);
+
+    flex-wrap: wrap;
+
+    gap: 3px 7px;
+  }
+
+  .clinic-copy strong {
+    font-size: 10px;
+  }
+
+  .clinic-copy > span {
+    width: 100%;
+
+    white-space: normal;
+
+    font-size: 9px;
+  }
+
+  .clinic-copy small {
+    font-size: 8px;
+  }
+
+  .clinic-banner > a {
+    margin-left: 40px;
+
+    font-size: 10px;
+  }
+
+  .mobile-break {
+    display: initial;
+  }
+}
+
+
+/* ================================
+   SMALL PHONES
+================================ */
+
+@media (max-width: 400px) {
+
+  .sidebar {
+    padding-inline: 11px;
+  }
+
+  .brand strong {
+    font-size: 14px;
+  }
+
+  .nav-item {
+    padding-inline: 5px;
+  }
+
+  .dashboard {
+    padding-inline: 12px;
+  }
+
+  .pet-card {
+    padding: 14px 12px;
+  }
+
+  .pet-card-main {
+    gap: 5px;
+  }
+
+  .pet-profile {
+    gap: 7px;
+  }
+
+  .pet-photo {
+    width: 65px;
+    height: 65px;
+  }
+
+  .pet-photo span {
+    font-size: 38px;
+  }
+
+  .pet-meta h2 {
+    font-size: 17px;
+  }
+
+  .help-button {
+    min-width: 112px;
+
+    gap: 4px;
+
+    padding-inline: 8px;
+
+    font-size: 9px;
+  }
+
+  .heart {
+    width: 23px;
+    height: 23px;
+  }
+
+  .step-tag,
+  .fast-track {
+    font-size: 7px;
+  }
+
+  .pet-details {
+    font-size: 7px;
+  }
+
+  .clinic-copy small {
+    white-space: normal;
+  }
 }

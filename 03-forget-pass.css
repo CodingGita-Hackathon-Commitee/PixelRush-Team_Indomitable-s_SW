@@ -1,73 +1,887 @@
 :root {
+
   font-family: "DM Sans", "Segoe UI", sans-serif;
+
   color: #3c2c26;
-  background: #b4c4ff;
+
+  background: #fff8f1;
+
   font-synthesis: none;
+
   text-rendering: optimizeLegibility;
+
   --burnt: #c7472b;
+
   --muted: #8f776d;
+
   --cream: #fff8f1;
+
 }
 
-* { box-sizing: border-box; }
-body { margin: 0; min-width: 320px; min-height: 100vh; display: grid; place-items: center; padding: 11px 15px; }
-button, input { font: inherit; }
-a { color: inherit; }
 
-.reset-layout { width: min(100%, 1200px); min-height: min(630px, calc(100vh - 22px)); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; background: var(--cream); box-shadow: 0 8px 30px #3d4f9c12; }
-.welcome-panel { position: relative; min-height: 600px; display: flex; align-items: center; justify-content: center; padding: 100px 30px 82px; background: radial-gradient(ellipse at 72% 77%, #ffc8ad50, transparent 27%), linear-gradient(145deg, #ffdfcc, #ffd2bb); }
-.brand { position: absolute; top: 40px; left: 40px; display: flex; align-items: center; gap: 9px; text-decoration: none; }
-.brand-mark { width: 29px; height: 29px; display: grid; place-items: center; border-radius: 50%; background: #fff; color: var(--burnt); font-size: 14px; }
-.brand strong { font-size: 18px; font-weight: 700; letter-spacing: -.04em; }
-.welcome-content { margin-top: -4px; text-align: center; }
-.pet-wrap { position: relative; width: 128px; margin: 0 auto 13px; }
-.pet-portrait { width: 128px; height: 128px; display: grid; place-items: center; border: 7px solid #fff7ef; border-radius: 50%; background: radial-gradient(circle at 50% 48%, #fff1dc, #f8dfbb); box-shadow: 0 9px 20px #a65e3020; }
-.pet-portrait span { font-size: 75px; line-height: 1; filter: drop-shadow(0 4px 2px #8e4e2822); }
-.pet-badge { position: absolute; left: 50%; bottom: -8px; transform: translateX(-50%); display: flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 20px; background: white; box-shadow: 0 3px 8px #74432a1c; font-size: 8px; white-space: nowrap; }
-.pet-badge span { color: var(--burnt); font-size: 10px; }
-.welcome-content h1 { margin: 22px 0 8px; font-size: clamp(27px, 3vw, 30px); line-height: 1.12; letter-spacing: -.055em; font-weight: 600; }
-.welcome-content p { margin: 0; color: #806d63; font-size: 11px; line-height: 1.6; }
-.trust-pill { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); width: max-content; max-width: calc(100% - 28px); display: flex; align-items: center; gap: 7px; padding: 8px 13px; border-radius: 30px; background: #fff7f1; color: #7d675c; box-shadow: 0 5px 16px #8d51301b; font-size: 8px; white-space: nowrap; }
-.trust-pill span { color: var(--burnt); font-size: 10px; }
-.trust-pill i { font-style: normal; color: #b69c8f; }
+* {
 
-.form-panel { position: relative; min-height: 600px; display: grid; place-items: center; padding: 55px 32px; background: #fff8f1; }
-.back-button { position: absolute; top: 20px; left: 20px; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: #fff; color: #493930; box-shadow: 0 3px 8px #67472b12; text-decoration: none; font-size: 16px; }
-.reset-card { width: min(100%, 282px); padding: 26px 26px 32px; border-radius: 19px; background: #fff; box-shadow: 0 12px 35px #79533512; text-align: center; }
-.reset-icon { position: relative; width: 46px; height: 46px; display: grid; place-items: center; margin: 0 auto 12px; border-radius: 50%; background: #eee2ff; color: #45302d; font-size: 23px; }
-.reset-icon i { position: absolute; right: 9px; bottom: 8px; color: var(--burnt); font-size: 11px; font-style: normal; }
-.form-heading h2 { margin: 0 0 5px; font-size: 19px; font-weight: 600; letter-spacing: -.05em; }
-.form-heading p { margin: 0 0 16px; color: var(--muted); font-size: 10px; line-height: 1.55; }
-form { text-align: left; }
-form label { display: block; margin: 11px 0 6px; font-size: 9px; font-weight: 500; }
-.input-wrap { height: 36px; display: flex; align-items: center; border-radius: 13px; background: #fff7ef; }
-.field-icon { flex: 0 0 32px; padding-left: 12px; color: #9c7e70; font-size: 13px; }
-.input-wrap input { width: 100%; height: 100%; padding: 0 10px 0 0; border: 0; outline: 0; background: transparent; color: #49372f; font-size: 9px; }
-.input-wrap input::placeholder { color: #78655d; opacity: 1; }
-.input-wrap:focus-within { outline: 1px solid #e9a38c; }
-.submit-button { width: 100%; height: 41px; display: flex; justify-content: center; align-items: center; gap: 5px; margin-top: 15px; border: 0; border-radius: 13px; background: var(--burnt); color: #fff; box-shadow: 0 4px 9px #a63d2733; cursor: pointer; font-size: 11px; font-weight: 600; transition: background .2s, transform .2s; }
-.submit-button:hover { background: #ad3d24; transform: translateY(-1px); }
-.login-link { display: inline-flex; align-items: center; gap: 4px; margin-top: 19px; color: #493930; text-decoration: none; font-size: 9px; }
+  box-sizing: border-box;
 
-@media (max-width: 700px) {
-  body { display: block; padding: 0; background: var(--cream); }
-  .reset-layout { width: 100%; min-height: 100vh; grid-template-columns: 1fr; }
-  .welcome-panel { min-height: 390px; padding: 86px 20px 72px; }
-  .brand { top: 23px; left: 24px; }
-  .pet-wrap, .pet-portrait { width: 105px; }
-  .pet-portrait { height: 105px; }
-  .pet-portrait span { font-size: 62px; }
-  .welcome-content h1 { margin-top: 20px; font-size: 25px; }
-  .desktop-break { display: none; }
-  .trust-pill { bottom: 20px; font-size: 7px; }
-  .form-panel { min-height: 410px; padding: 52px 22px 38px; }
-  .back-button { top: 16px; left: 18px; }
-  .reset-card { width: min(100%, 360px); }
 }
+
+
+html,
+body {
+
+  width: 100%;
+
+  min-height: 100%;
+
+  margin: 0;
+
+}
+
+
+body {
+
+  min-width: 320px;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+}
+
+
+button,
+input {
+
+  font: inherit;
+
+}
+
+
+a {
+
+  color: inherit;
+
+}
+
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.reset-layout {
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  overflow: hidden;
+
+  background: var(--cream);
+
+}
+
+
+/* =========================
+   LEFT PANEL
+========================= */
+
+.welcome-panel {
+
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 100px 30px 82px;
+
+  background:
+
+    radial-gradient(
+      ellipse at 72% 77%,
+      #ffc8ad50,
+      transparent 27%
+    ),
+
+    linear-gradient(
+      145deg,
+      #ffdfcc,
+      #ffd2bb
+    );
+
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+
+  position: absolute;
+
+  top: 40px;
+
+  left: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  text-decoration: none;
+
+}
+
+
+.brand-mark {
+
+  width: 29px;
+
+  height: 29px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  color: var(--burnt);
+
+  font-size: 14px;
+
+}
+
+
+.brand strong {
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  letter-spacing: -.04em;
+
+}
+
+
+/* =========================
+   WELCOME CONTENT
+========================= */
+
+.welcome-content {
+
+  margin-top: -4px;
+
+  text-align: center;
+
+}
+
+
+.pet-wrap {
+
+  position: relative;
+
+  width: 128px;
+
+  margin: 0 auto 13px;
+
+}
+
+
+.pet-portrait {
+
+  width: 128px;
+
+  height: 128px;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 7px solid #fff7ef;
+
+  border-radius: 50%;
+
+  background:
+
+    radial-gradient(
+      circle at 50% 48%,
+      #fff1dc,
+      #f8dfbb
+    );
+
+  box-shadow:
+    0 9px 20px #a65e3020;
+
+}
+
+
+.pet-portrait span {
+
+  font-size: 75px;
+
+  line-height: 1;
+
+  filter:
+    drop-shadow(
+      0 4px 2px #8e4e2822
+    );
+
+}
+
+
+/* =========================
+   PET BADGE
+========================= */
+
+.pet-badge {
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: -8px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 5px 11px;
+
+  border-radius: 20px;
+
+  background: white;
+
+  box-shadow:
+    0 3px 8px #74432a1c;
+
+  font-size: 8px;
+
+  white-space: nowrap;
+
+}
+
+
+.pet-badge span {
+
+  color: var(--burnt);
+
+  font-size: 10px;
+
+}
+
+
+/* =========================
+   WELCOME TEXT
+========================= */
+
+.welcome-content h1 {
+
+  margin: 22px 0 8px;
+
+  font-size: clamp(27px, 3vw, 34px);
+
+  line-height: 1.12;
+
+  letter-spacing: -.055em;
+
+  font-weight: 600;
+
+}
+
+
+.welcome-content p {
+
+  margin: 0;
+
+  color: #806d63;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+
+}
+
+
+/* =========================
+   TRUST PILL
+========================= */
+
+.trust-pill {
+
+  position: absolute;
+
+  bottom: 40px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: max-content;
+
+  max-width: calc(100% - 28px);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 8px 13px;
+
+  border-radius: 30px;
+
+  background: #fff7f1;
+
+  color: #7d675c;
+
+  box-shadow:
+    0 5px 16px #8d51301b;
+
+  font-size: 8px;
+
+  white-space: nowrap;
+
+}
+
+
+.trust-pill span {
+
+  color: var(--burnt);
+
+  font-size: 10px;
+
+}
+
+
+.trust-pill i {
+
+  font-style: normal;
+
+  color: #b69c8f;
+
+}
+
+
+/* =========================
+   RIGHT PANEL
+========================= */
+
+.form-panel {
+
+  position: relative;
+
+  min-height: 100vh;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 55px 32px;
+
+  background: #fff8f1;
+
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-button {
+
+  position: absolute;
+
+  top: 25px;
+
+  left: 25px;
+
+  width: 38px;
+
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  color: #493930;
+
+  box-shadow:
+    0 3px 8px #67472b12;
+
+  text-decoration: none;
+
+  font-size: 18px;
+
+}
+
+
+/* =========================
+   RESET CARD
+========================= */
+
+.reset-card {
+
+  width: min(100%, 390px);
+
+  padding: 30px;
+
+  border-radius: 22px;
+
+  background: #fff;
+
+  box-shadow:
+    0 12px 35px #79533512;
+
+  text-align: center;
+
+}
+
+
+/* =========================
+   RESET ICON
+========================= */
+
+.reset-icon {
+
+  position: relative;
+
+  width: 52px;
+
+  height: 52px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin: 0 auto 14px;
+
+  border-radius: 50%;
+
+  background: #eee2ff;
+
+  color: #45302d;
+
+  font-size: 25px;
+
+}
+
+
+.reset-icon i {
+
+  position: absolute;
+
+  right: 9px;
+
+  bottom: 8px;
+
+  color: var(--burnt);
+
+  font-size: 11px;
+
+  font-style: normal;
+
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.form-heading h2 {
+
+  margin: 0 0 5px;
+
+  font-size: 23px;
+
+  font-weight: 600;
+
+  letter-spacing: -.05em;
+
+}
+
+
+.form-heading p {
+
+  margin: 0 0 20px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  line-height: 1.55;
+
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+form {
+
+  text-align: left;
+
+}
+
+
+form label {
+
+  display: block;
+
+  margin: 13px 0 6px;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+}
+
+
+.input-wrap {
+
+  position: relative;
+
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  border-radius: 13px;
+
+  background: #fff7ef;
+
+}
+
+
+.field-icon {
+
+  flex: 0 0 38px;
+
+  padding-left: 13px;
+
+  color: #9c7e70;
+
+  font-size: 14px;
+
+}
+
+
+.input-wrap input {
+
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0 10px 0 0;
+
+  border: 0;
+
+  outline: 0;
+
+  background: transparent;
+
+  color: #49372f;
+
+  font-size: 11px;
+
+}
+
+
+.input-wrap input::placeholder {
+
+  color: #78655d;
+
+  opacity: 1;
+
+}
+
+
+.input-wrap:focus-within {
+
+  outline: 1px solid #e9a38c;
+
+}
+
+
+/* =========================
+   SUBMIT
+========================= */
+
+.submit-button {
+
+  width: 100%;
+
+  min-height: 46px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 18px;
+
+  border: 0;
+
+  border-radius: 13px;
+
+  background: var(--burnt);
+
+  color: #fff;
+
+  box-shadow:
+    0 4px 9px #a63d2733;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  transition:
+    background .2s,
+    transform .2s;
+
+}
+
+
+.submit-button:hover {
+
+  background: #ad3d24;
+
+  transform: translateY(-1px);
+
+}
+
+
+/* =========================
+   LOGIN LINK
+========================= */
+
+.login-link {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 21px;
+
+  color: #493930;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+}
+
+
+.login-link:hover {
+
+  color: var(--burnt);
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+  .reset-layout {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .welcome-panel {
+
+    min-height: 500px;
+
+  }
+
+
+  .form-panel {
+
+    min-height: 650px;
+
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .welcome-panel {
+
+    min-height: 430px;
+
+    padding: 90px 20px 70px;
+
+  }
+
+
+  .brand {
+
+    top: 23px;
+
+    left: 24px;
+
+  }
+
+
+  .pet-wrap {
+
+    width: 105px;
+
+  }
+
+
+  .pet-portrait {
+
+    width: 105px;
+
+    height: 105px;
+
+  }
+
+
+  .pet-portrait span {
+
+    font-size: 62px;
+
+  }
+
+
+  .welcome-content h1 {
+
+    margin-top: 20px;
+
+    font-size: 26px;
+
+  }
+
+
+  .welcome-content p {
+
+    max-width: 340px;
+
+    font-size: 10px;
+
+  }
+
+
+  .desktop-break {
+
+    display: none;
+
+  }
+
+
+  .trust-pill {
+
+    bottom: 20px;
+
+    font-size: 7px;
+
+  }
+
+
+  .form-panel {
+
+    min-height: 600px;
+
+    padding: 55px 20px 40px;
+
+  }
+
+
+  .back-button {
+
+    top: 18px;
+
+    left: 20px;
+
+  }
+
+
+  .reset-card {
+
+    width: 100%;
+
+    max-width: 400px;
+
+    padding: 26px 22px 30px;
+
+  }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
 
 @media (max-width: 380px) {
-  .welcome-panel { min-height: 365px; }
-  .welcome-content h1 { font-size: 23px; }
-  .trust-pill { gap: 4px; padding-inline: 9px; font-size: 6.5px; }
-  .reset-card { padding: 23px 20px 28px; }
+
+  .welcome-panel {
+
+    min-height: 400px;
+
+  }
+
+
+  .welcome-content h1 {
+
+    font-size: 23px;
+
+  }
+
+
+  .trust-pill {
+
+    gap: 4px;
+
+    padding-inline: 9px;
+
+    font-size: 6.5px;
+
+  }
+
+  .reset-card {
+
+    padding: 23px 18px 28px;
+
+  }
+
 }
