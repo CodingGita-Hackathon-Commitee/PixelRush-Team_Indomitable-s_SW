@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#b6c5ff" />
+  <title>PawPal — Visit complete</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="11-visit-complete.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="dashboard.html"><span class="brand-mark">🐾</span><strong>PawPal</strong></a>
+      <nav aria-label="Main navigation">
+        <a class="nav-item" href="dashboard.html"><span>⌂</span>Home</a>
+        <a class="nav-item" href="matching-clinics.html"><span>⊞</span>Clinics</a>
+        <a class="nav-item active" href="visit-status.html"><span>▣</span>Visit</a>
+        <a class="nav-item" href="#pet"><span>🐾</span>Pet</a>
+      </nav>
+      <div class="side-bottom"><a class="switch-button" href="#clinic-view">⌁ &nbsp;Switch to clinic view</a><a class="profile" href="#profile"><span>👩🏻</span><div><strong>Riya</strong><small>Pet Parent</small></div></a></div>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar"><div class="crumb"><a href="dashboard.html">←</a><span>PawPal › Dashboard</span></div><div class="top-actions"><button aria-label="Notifications">♧</button><span class="avatar">👩🏻</span></div></header>
+      <div class="completed-banner"><div><a href="visit-status.html">←</a><p>Emergency Visit &nbsp;/&nbsp; <strong>Completed Care</strong><small>Ref #SP-8821 · Sunny Paws 24×7 Animal Hospital</small></p></div><span class="closed-tag">● &nbsp;Case Closed &amp; Stabilized</span></div>
+
+      <div class="content-grid">
+        <div class="left-column">
+          <section class="discharge-card">
+            <div class="dog-wrap"><div class="dog-portrait"><span>🐶</span></div><span class="success-check">✓</span></div>
+            <span class="resting-tag">🐾 &nbsp;Discharged &amp; Resting</span>
+            <h1>Biscuit is in good hands</h1>
+            <p class="discharge-copy">Triage and post-ingestion stabilization completed smoothly at Sunny Paws 24×7 Vet.</p>
+            <div class="vitals"><div><small>Heart Rate</small><strong>88 bpm</strong><span>✓ Normal</span></div><div><small>Temp</small><strong>101.4°F</strong><span>✓ Optimal</span></div><div><small>Hydration</small><strong>Restored</strong><span>✓ Stable</span></div></div>
+          </section>
+          <aside class="recovery-card"><span class="recovery-icon">♨</span><p><strong>24-Hour Recovery Advice</strong><br />Keep Biscuit in a quiet space with plenty of water. Offer small amounts of bland food (boiled chicken and white rice) after 6 hours.</p></aside>
+        </div>
+
+        <div class="right-column">
+          <div class="summary-grid">
+            <article class="info-card vet-card"><header><small>ATTENDING VET</small><span>♧</span></header><h2>Treated by Dr. Mehta</h2><div class="split-meta"><span>Seen at 1:42 AM</span><span>Sunny Paws Bay 01</span></div></article>
+            <article class="info-card request-card"><header><small>REQUEST SUMMARY</small><span>☑</span></header><h2>Ate harmful substance</h2><p>~35g dark chocolate ingestion</p><div class="split-meta"><span>Triage #SP-8821</span><span>Intake: 42 mins</span></div></article>
+            <article class="info-card care-card"><header><small>CARE SUMMARY</small><span>▣</span></header><p>Induced emesis successful; active vitals stable. Hydration saline administered; no cardiac arrhythmia detected.</p><small class="clearance">✓ Full clearance to rest at home</small></article>
+            <article class="info-card reminder-card"><header><small>NEXT REMINDER</small><span>▣</span></header><h2>Follow-up on 12 Oct <small>(10:30 AM)</small></h2><p>Post-toxin routine blood check &amp; hydration exam with Bay 01.</p></article>
+          </div>
+          <button class="close-button" type="button">Close request <span>✓</span></button>
+          <a class="download-link" href="#download">▤ &nbsp;Download visit summary &amp; discharge slip (PDF)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
