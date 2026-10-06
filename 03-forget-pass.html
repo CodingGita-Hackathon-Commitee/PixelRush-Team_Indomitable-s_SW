@@ -1,48 +1,259 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#b5c5ff" />
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#b5c5ff"
+  >
+
   <title>PawPal — Reset your password</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="03-forget-pass.css" />
+
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="03-forget-pass.css"
+  >
+
 </head>
+
+
 <body>
+
   <main class="reset-layout">
-    <section class="welcome-panel" aria-label="PawPal introduction">
-      <a class="brand" href="index.html" aria-label="PawPal home">
-        <span class="brand-mark" aria-hidden="true">🐾</span><strong>PawPal</strong>
+
+
+    <!-- LEFT SIDE -->
+
+    <section
+      class="welcome-panel"
+      aria-label="PawPal introduction"
+    >
+
+      <a
+        class="brand"
+        href="01-sign-up.html"
+        aria-label="PawPal home"
+      >
+
+        <span
+          class="brand-mark"
+          aria-hidden="true"
+        >
+          🐾
+        </span>
+
+        <strong>PawPal</strong>
+
       </a>
+
+
       <div class="welcome-content">
+
         <div class="pet-wrap">
-          <div class="pet-portrait" role="img" aria-label="A friendly golden dog"><span>🐶</span></div>
-          <div class="pet-badge"><span>♥</span> Biscuit is waiting</div>
+
+          <div
+            class="pet-portrait"
+            role="img"
+            aria-label="A friendly golden dog"
+          >
+            <span>🐶</span>
+          </div>
+
+
+          <div class="pet-badge">
+
+            <span>♥</span>
+
+            Biscuit is waiting
+
+          </div>
+
         </div>
-        <h1>Care for Biscuit,<br />anytime.</h1>
-        <p>Get right back into your account and stay connected<br class="desktop-break" /> to triage.</p>
+
+
+        <h1>
+          Care for Biscuit,
+          <br>
+          anytime.
+        </h1>
+
+
+        <p>
+
+          Get right back into your account and stay connected
+
+          <br class="desktop-break">
+
+          to triage.
+
+        </p>
+
       </div>
-      <div class="trust-pill"><span>♧</span> Protected &amp; confidential vet records <i>·</i> <span>◉</span> 24/7 Triage assistance</div>
+
+
+      <div class="trust-pill">
+
+        <span>♧</span>
+
+        Protected &amp; confidential vet records
+
+        <i>·</i>
+
+        <span>◉</span>
+
+        24/7 Triage assistance
+
+      </div>
+
     </section>
 
-    <section class="form-panel" aria-label="Reset your PawPal password">
-      <a class="back-button" href="login.html" aria-label="Back to login">←</a>
+
+    <!-- RIGHT SIDE -->
+
+    <section
+      class="form-panel"
+      aria-label="Reset your PawPal password"
+    >
+
+
+      <a
+        class="back-button"
+        href="02-login.html"
+        aria-label="Back to login"
+      >
+        ←
+      </a>
+
+
       <div class="reset-card">
-        <div class="reset-icon" aria-hidden="true"><span>◴</span><i>↗</i></div>
+
+
+        <div
+          class="reset-icon"
+          aria-hidden="true"
+        >
+
+          <span>◴</span>
+
+          <i>↗</i>
+
+        </div>
+
+
         <header class="form-heading">
-          <h2>Forgot your password?</h2>
-          <p>Enter your registered email and we'll send you a<br class="desktop-break" /> link to reset it.</p>
+
+          <h2>
+            Forgot your password?
+          </h2>
+
+          <p>
+
+            Enter your registered email and we'll send you a
+
+            <br class="desktop-break">
+
+            link to reset it.
+
+          </p>
+
         </header>
-        <form action="#" method="get">
-          <label for="email">Email</label>
-          <div class="input-wrap"><span class="field-icon" aria-hidden="true">✉</span><input id="email" name="email" type="email" placeholder="riya@example.com" autocomplete="email" required /></div>
-          <button class="submit-button" type="submit">Send reset link <span aria-hidden="true">→</span></button>
+
+
+        <form
+          action="04-check-email.html"
+          method="get"
+        >
+
+
+          <label for="email">
+            Email
+          </label>
+
+
+          <div class="input-wrap">
+
+            <span
+              class="field-icon"
+              aria-hidden="true"
+            >
+              ✉
+            </span>
+
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="riya@example.com"
+              autocomplete="email"
+              required
+            >
+
+          </div>
+
+
+          <button
+            class="submit-button"
+            type="submit"
+          >
+
+            Send reset link
+
+            <span aria-hidden="true">
+              →
+            </span>
+
+          </button>
+
         </form>
-        <a class="login-link" href="login.html"><span aria-hidden="true">←</span> Back to login</a>
+
+
+        <a
+          class="login-link"
+          href="02-login.html"
+        >
+
+          <span aria-hidden="true">
+            ←
+          </span>
+
+          Back to login
+
+        </a>
+
+
       </div>
+
     </section>
+
   </main>
+
 </body>
+
 </html>
