@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#b6c5ff" />
+  <title>PawPal — Matching emergency clinics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="08-matching-clinics.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="dashboard.html"><span class="brand-mark">🐾</span><strong>PawPal</strong></a>
+      <nav aria-label="Main navigation">
+        <a class="nav-item" href="dashboard.html"><span>⌂</span>Home</a>
+        <a class="nav-item active" href="#clinics"><span>⊞</span>Clinics</a>
+        <a class="nav-item" href="#visits"><span>▣</span>Visit</a>
+        <a class="nav-item" href="#pet"><span>🐾</span>Pet</a>
+      </nav>
+      <a class="sidebar-switch" href="#clinic-view"><span>⌁</span>Switch to clinic view</a>
+      <a class="profile" href="#profile"><span class="avatar avatar-small">👩🏻</span><span><strong>Riya</strong><small>Pet Parent</small></span></a>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar"><p class="status"><i></i>Emergency Care Triage Active</p><div><button aria-label="Notifications">♧</button><button aria-label="Help">?</button></div></header>
+      <div class="breadcrumb"><a href="urgent-intake.html">←</a><span>Triage Questionnaire</span><b>›</b><strong>Live Clinic Matching</strong></div>
+      <div class="broadcast-banner"><span class="check">✓</span><span>Request sent 1 min ago · Broadcasting Biscuit's details to verified emergency teams</span><strong>● &nbsp;3 clinics actively reviewing</strong></div>
+
+      <div class="section-title"><div><h1>3 clinics can help</h1><p>Direct matching based on Biscuit's respiratory symptoms and travel proximity</p></div><small>☷ &nbsp;Sorted by optimal response time</small></div>
+
+      <div class="results-grid">
+        <section class="clinic-results" aria-label="Matched clinics">
+          <article class="clinic-card best-match">
+            <div class="badges"><span>★ Best match</span><span>◉ Open now · 24/7</span><span>◷ Ready for arrival</span></div>
+            <div class="clinic-name"><div><h2>Sunny Paws 24×7 Vet</h2><p><span>⌖</span> 1.2 km away · ~4 min drive <b>· ~10 min wait</b></p></div><span class="clinic-icon">✚</span></div>
+            <div class="specialties"><span>Emergency Critical Care</span><span>Oxygen Chamber Ready</span><span>Dogs &amp; Cats</span><span>Direct Intake Bay</span></div>
+            <div class="staff-note"><span class="doctor-avatar">DM</span><p><strong>Staff alerted · Dr. Mehta on triage duty</strong><br />Reviewing Biscuit's respiratory logs right now</p><b>● &nbsp;Assigned</b></div>
+            <a class="choose-button" href="#choose">Choose this clinic <span>→</span></a>
+          </article>
+          <article class="clinic-card compact-clinic">
+            <span class="compact-icon paw">🐾</span><div class="compact-main"><h2>Happy Tails<br class="small-break" /> Care</h2><p>2.8 km away · ~8 min drive<br />Can accommodate canine urgent care</p></div><div class="compact-meta"><span>◷ Viewed by vet</span><small>Wait ~15 min</small></div><a href="#details">View details</a>
+          </article>
+          <article class="clinic-card compact-clinic">
+            <span class="compact-icon">⊞</span><div class="compact-main"><h2>Maple Pet Hospital</h2><p>4.1 km away · ~12 min drive<br />Full surgical suite with trauma surgeon on call</p></div><div class="compact-meta"><span>▸ Notified</span><small>Wait ~25 min</small></div><a href="#details">View details</a>
+          </article>
+          <aside class="support-note"><span>♧</span>Need dispatch assistance? Call our direct 24×7 clinical coordinator at 1-800-PAWPAL-911</aside>
+        </section>
+
+        <aside class="clinic-side">
+          <section class="map-card" aria-label="Map showing clinics nearby">
+            <div class="map-label"><i></i>Radius: 5 km</div><button class="map-control" aria-label="Map settings">⚙</button>
+            <div class="map-canvas">
+              <span class="park park-one"></span><span class="park park-two"></span>
+              <span class="road road-one"></span><span class="road road-two"></span><span class="road road-three"></span><span class="road road-four"></span>
+              <span class="route"></span>
+              <span class="map-town town-one">Maple (4.1km)</span><span class="map-town town-two">Hall<br />Ta...<br />(2.8)</span>
+              <span class="you-pin"><i></i><b>You &amp; Biscuit</b></span>
+              <span class="clinic-pin"><b>Sunny<br />Paws<br />(1.2 km)</b><i></i></span>
+              <div class="map-foot"><span>● Light traffic · Route via Grand Ave</span><small>Updated 30s ago</small></div>
+            </div>
+          </section>
+
+          <section class="details-card">
+            <header><span class="detail-dot"></span><h2>Sunny Paws 24×7 Vet<br />Details</h2><b>Priority<br />Match</b></header>
+            <div class="detail-row"><span>◷</span><p><strong>Hours of Operation</strong><br />Open 24 hours · 7 days a week including holidays</p></div>
+            <div class="detail-row"><span>✚</span><p><strong>Emergency Capabilities Active</strong><br />Emergency surgery, Digital X-ray, Oxygen therapy, In-house laboratory &amp; ultrasound</p></div>
+            <div class="detail-row"><span>♧</span><p><strong>Attending Team</strong><br />2 emergency veterinarians on shift now with 4 veterinary nurses</p></div>
+            <div class="detail-row"><span>⌖</span><p><strong>Location &amp; Access</strong><br />742 Evergreen Terrace · Reserved emergency parent drop-off zone at Gate B</p></div>
+            <footer><span>✓ &nbsp;Biscuit's intake form attached</span><a href="tel:+18007297251911">Call clinic ☎</a></footer>
+          </section>
+        </aside>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
