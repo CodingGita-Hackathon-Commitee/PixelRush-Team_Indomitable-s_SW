@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff8f5" />
+  <title>PawPal — Pet care dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="05-home.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="dashboard.html"><span class="brand-mark">🐾</span><strong>PawPal</strong></a>
+      <nav aria-label="Main navigation">
+        <a class="nav-item active" href="dashboard.html"><span>⌂</span>Home</a>
+        <a class="nav-item" href="#clinics"><span>⊞</span>Clinics</a>
+        <a class="nav-item" href="#visits"><span>▣</span>Visit</a>
+        <a class="nav-item" href="#pet"><span>🐾</span>Pet</a>
+      </nav>
+      <a class="sidebar-switch" href="#clinic-view"><span>⌁</span>Switch to clinic view</a>
+      <a class="profile" href="#profile"><span class="avatar avatar-small">👩🏻</span><span><strong>Riya</strong><small>Pet Parent</small></span></a>
+    </aside>
+
+    <section class="dashboard">
+      <header class="topbar">
+        <p class="status"><i></i>Emergency Care Triage Active</p>
+        <div class="top-actions"><button aria-label="Notifications">♧</button><button aria-label="Help">?</button></div>
+      </header>
+
+      <div class="page-heading">
+        <div><h1>Hi Riya</h1><p>How is Biscuit<br class="mobile-break" /> today?</p></div>
+        <div class="user-actions"><a href="#clinic-view" class="switch-button"><span>⌁</span> Switch to clinic view</a><span class="avatar">👩🏻<i></i></span></div>
+      </div>
+
+      <div class="content-grid">
+        <section class="pet-card" id="pet">
+          <div class="pet-card-top"><span class="fast-track"><i></i>FAST-TRACK TRIAGE</span><span class="step-tag">TAP 1 OF 3</span></div>
+          <div class="pet-card-main">
+            <div class="pet-profile">
+              <div class="pet-photo"><span>🐶</span></div>
+              <span class="paw-stamp">🐾</span>
+              <div class="pet-meta"><h2>Biscuit</h2><span class="health-tag">● &nbsp;Healthy</span></div>
+            </div>
+            <div class="help-area"><a class="help-button" href="#triage"><span class="heart">♥</span><span>My pet<br />needs help</span><b>→</b></a><p>Priority connection to licensed<br /> emergency vets</p></div>
+          </div>
+          <div class="pet-details"><span>♧ &nbsp;Coverage active · Guardian Plan</span><i>•</i><span>◷ &nbsp;Last checked 12 days ago</span></div>
+        </section>
+
+        <section class="upcoming" aria-labelledby="upcoming-title">
+          <div class="upcoming-heading"><h2 id="upcoming-title">Coming up</h2><span>3 items</span></div>
+          <article class="reminder"><span class="reminder-icon vaccine">♜</span><div><h3>Rabies vaccine</h3><p>In 5 days · Sunny<br />Paws</p></div></article>
+          <article class="reminder"><span class="reminder-icon medicine">▣</span><div><h3>Tick medicine</h3><p>Tomorrow<br />morning</p></div></article>
+          <article class="reminder"><span class="reminder-icon grooming">✂</span><div><h3>Grooming &amp; Bath</h3><p>Saturday, 11:00 AM</p></div></article>
+        </section>
+
+        <section class="clinic-banner" id="clinics">
+          <span class="clinic-symbol">✳</span>
+          <div class="clinic-copy"><strong>Nearest 24×7 clinic:</strong><span>Sunny Paws 24×7 Vet, 1.2 km away</span><small><i></i>Open now · Est. wait 10m</small></div>
+          <a href="#clinics">View clinics <span>→</span></a>
+        </section>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
