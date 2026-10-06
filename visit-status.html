@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#b6c5ff" />
+  <title>PawPal — Active visit status</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="10-visit-status.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="dashboard.html"><span class="brand-mark">🐾</span><strong>PawPal</strong></a>
+      <nav aria-label="Main navigation">
+        <a class="nav-item" href="dashboard.html"><span>⌂</span>Home</a>
+        <a class="nav-item" href="matching-clinics.html"><span>⊞</span>Clinics</a>
+        <a class="nav-item active" href="visit-status.html"><span>⊞</span>Visit</a>
+        <a class="nav-item" href="#pet"><span>🐾</span>Pet</a>
+      </nav>
+      <div class="side-bottom"><a class="switch-button" href="#clinic-view">⌁ &nbsp;Switch to clinic view</a><a class="profile" href="#profile"><span>👩🏻</span><div><strong>Riya</strong><small>Pet Parent</small></div></a></div>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar"><div class="crumb"><a href="dashboard.html">←</a><span>PawPal › Dashboard</span></div><div class="top-actions"><button aria-label="Notifications">♧</button><span class="avatar">👩🏻</span></div></header>
+      <div class="page-heading"><div><a class="back-link" href="dashboard.html">←</a><div><p>Emergency Triage › Visit Status Tracker</p><h1>Active Visit Status</h1></div></div><span class="ticket"><i></i><strong>Ticket #SP-8821</strong> · Active Triage</span></div>
+
+      <section class="timeline" aria-label="Visit progress">
+        <div class="timeline-step done"><span class="step-circle">✓</span><i class="connector"></i><strong>Sent</strong><small>11:42 AM</small></div>
+        <div class="timeline-step done"><span class="step-circle">✓</span><i class="connector"></i><strong>Clinics<br />notified</strong><small>3 reached</small></div>
+        <div class="timeline-step current"><span class="new-tag">New</span><span class="step-circle">⊞</span><i class="connector"></i><strong>Clinic<br />accepted</strong><small>Sunny Paws<br />Ready</small></div>
+        <div class="timeline-step pending"><span class="step-circle">▰</span><i class="connector"></i><strong>On the way</strong><small>Transit</small></div>
+        <div class="timeline-step pending"><span class="step-circle">♧</span><strong>Checked in</strong><small>Arrival bay</small></div>
+      </section>
+
+      <div class="main-grid">
+        <div class="left-column">
+          <section class="responses card">
+            <header class="card-heading"><div><h2>Clinic responses</h2><p>Real-time status across prioritized local triage centers</p></div><span class="sync-tag">● Live syncing</span></header>
+            <div class="response-row accepted"><span class="response-icon">🐾</span><div><h3>Sunny Paws 24×7 Vet <b>✓</b></h3><p>1.2 km away · Dr. Mehta on triage</p></div><strong class="status-pill green">● Accepted</strong></div>
+            <div class="response-row"><span class="response-icon">♙</span><div><h3>Happy Tails Care</h3><p>2.8 km away</p></div><strong class="status-pill yellow">◷ Viewed by vet</strong></div>
+            <div class="response-row"><span class="response-icon">⊞</span><div><h3>Maple Pet Hospital</h3><p>4.1 km away</p></div><strong class="status-pill peach">◷ Notified</strong></div>
+            <p class="response-summary"><span>◉</span><strong>2 of 3 clinics responded. Sunny Paws is expecting you immediately.</strong></p>
+          </section>
+
+          <aside class="prep-card"><span>▣</span><p><strong>Preparation &amp; Bay Reserved</strong><br />Dr. Mehta's emergency trauma suite is pre-alerted and holding triage bay 1 for Biscuit. Apomorphine induction dosage and active monitoring setup are on standby.</p></aside>
+        </div>
+
+        <aside class="pet-card card">
+          <header class="pet-heading"><span class="pet-avatar">🐶</span><div><h2>Biscuit</h2><p>Golden Retriever · 28 kg · 3 yrs</p></div></header>
+          <div class="complaint"><small>PRIMARY EMERGENCY COMPLAINT</small><p><b>⚠</b> Ate something harmful (dark chocolate, ~35g)</p></div>
+          <div class="visit-meta"><div><small>Triage Request</small><strong>Sent 8 min ago</strong></div><div><small>Origin</small><strong>Near Kalol, Gujarat</strong></div></div>
+          <a class="call-button" href="tel:+912769224890">♧ Call clinic directly</a>
+          <a class="radius-button" href="matching-clinics.html">◉ Widen clinic search radius</a>
+          <button class="cancel-button" type="button">Cancel triage request</button>
+        </aside>
+      </div>
+
+      <nav class="demo-cases" aria-label="Demo edge cases"><span>Demo edge-cases:</span><a href="#declined">Clinic declined</a><a href="#closed">No clinic open</a><a href="#expired">Request expired</a></nav>
+    </section>
+  </main>
+</body>
+</html>
