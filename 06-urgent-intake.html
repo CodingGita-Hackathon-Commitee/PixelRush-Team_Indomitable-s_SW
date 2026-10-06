@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#b6c5ff" />
+
+  <title>PawPal — Urgent Pet Care</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="06-urgent-intake.css" />
+</head>
+
+<body>
+
+  <main class="intake-app">
+
+    <header class="topbar">
+
+      <a class="back" href="05-home.html" aria-label="Back to home">
+        ←
+      </a>
+
+      <a class="brand" href="05-home.html">
+        <span>🐾</span> PawPal Urgent Care
+      </a>
+
+      <div class="header-right">
+        <span class="intake-tag">✳ &nbsp;Triage Intake</span>
+        <span class="avatar" aria-label="Riya">👩🏻</span>
+      </div>
+
+    </header>
+
+
+    <div class="intake-content">
+
+      <div class="main-grid">
+
+        <section class="intake-info">
+
+          <h1>What's happening?</h1>
+
+          <div class="pet-select">
+            <span>🐾 &nbsp;Biscuit <b>✓</b></span>
+
+            <a href="petprofile.html">
+              Not Biscuit?
+            </a>
+          </div>
+
+          <p class="location">
+            <span>●</span>
+            Near Kalol, Gujarat (auto-filled)
+          </p>
+
+          <p class="intro">
+            We'll alert nearby clinics right away. Your request will
+            <br class="desktop-break" />
+            broadcast simultaneously to verified 24×7 emergency
+            <br class="desktop-break" />
+            facilities.
+          </p>
+
+          <aside class="assurance">
+
+            <span class="assurance-icon">♥</span>
+
+            <p>
+              <strong>Care Assurance</strong>
+              <br />
+              Emergency triage is free. You only pay for
+              <br class="desktop-break" />
+              treatment if you visit.
+            </p>
+
+          </aside>
+
+          <aside class="network-status">
+
+            <span class="progress">3/3</span>
+
+            <p>
+              <strong>Priority Network Status</strong>
+              <br />
+              <small>
+                Telemetry link established • Ready to transmit
+              </small>
+            </p>
+
+          </aside>
+
+        </section>
+
+
+        <section
+          class="symptom-area"
+          aria-label="Choose what is happening"
+        >
+
+          <div class="symptoms">
+
+            <button class="symptom selected" type="button">
+              <span class="symptom-icon">⚠</span>
+              <b>
+                Are something
+                <br />
+                harmful
+              </b>
+              <i>✓</i>
+            </button>
+
+            <button class="symptom" type="button">
+              <span class="symptom-icon">♙</span>
+              <b>Injury</b>
+            </button>
+
+            <button class="symptom" type="button">
+              <span class="symptom-icon">≋</span>
+              <b>Not eating</b>
+            </button>
+
+            <button class="symptom" type="button">
+              <span class="symptom-icon">≋</span>
+              <b>Breathing trouble</b>
+            </button>
+
+            <button class="symptom" type="button">
+              <span class="symptom-icon">◉</span>
+              <b>Vomiting</b>
+            </button>
+
+            <button class="symptom" type="button">
+              <span class="symptom-icon">•••</span>
+              <b>Something else</b>
+            </button>
+
+          </div>
+
+        </section>
+
+      </div>
+
+
+      <section class="request-area">
+
+        <span class="verified-tag">
+          Intake verified • Step 3 of 3 completed
+        </span>
+
+        <a
+          class="send-button"
+          href="08-matching-clinics.html"
+        >
+          Send urgent request <span>→</span>
+        </a>
+
+        <p class="broadcast">
+          <i></i>
+          Broadcasting to 3 open clinics within 5 km
+        </p>
+
+      </section>
+
+
+      <section
+        class="clinics"
+        aria-labelledby="clinic-title"
+      >
+
+        <div class="clinic-heading">
+
+          <h2 id="clinic-title">
+            <span>◎</span>
+            Target Emergency Clinics in Range
+          </h2>
+
+          <small>Updated just now</small>
+
+        </div>
+
+
+        <div class="clinic-list">
+
+          <article class="clinic-card">
+
+            <i></i>
+
+            <h3>Apex Vet Trauma</h3>
+
+            <p>
+              Kalol West • 1.4 km
+            </p>
+
+            <div>
+              <span>Triage Ready</span>
+              <b>~4 min wait</b>
+            </div>
+
+          </article>
+
+
+          <article class="clinic-card">
+
+            <i></i>
+
+            <h3>Gujarat 24/7 Animal Hosp</h3>
+
+            <p>
+              Highway Link • 2.8 km
+            </p>
+
+            <div>
+              <span>Critical ICU On-Duty</span>
+              <b>Immediate</b>
+            </div>
+
+          </article>
+
+
+          <article class="clinic-card">
+
+            <i></i>
+
+            <h3>Companion Care Unit</h3>
+
+            <p>
+              Sector 5 • 4.1 km
+            </p>
+
+            <div>
+              <span>Toxicology Unit</span>
+              <b>~8 min wait</b>
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <footer>
+
+      <span>
+        24/7 PawPal Emergency Response Network
+      </span>
+
+      <span>
+        Care Protocol Encrypted &amp; Verified
+      </span>
+
+    </footer>
+
+  </main>
+
+</body>
+</html>
+
