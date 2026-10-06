@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#b6c5ff" />
+  <title>PawPal — Pet profile and health records</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="12-pet-profile.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="dashboard.html"><span class="brand-mark">🐾</span><strong>PawPal</strong></a>
+      <nav aria-label="Main navigation">
+        <a class="nav-item" href="dashboard.html"><span>⌂</span>Home</a>
+        <a class="nav-item" href="matching-clinics.html"><span>⊞</span>Clinics</a>
+        <a class="nav-item" href="visit-status.html"><span>▣</span>Visit</a>
+        <a class="nav-item active" href="pet-profile.html"><span>🐾</span>Pet</a>
+      </nav>
+      <div class="sidebar-bottom"><a class="switch-button" href="#clinic-view">⌁ &nbsp;Switch to clinic view</a><a class="profile" href="#profile"><span>👩🏻</span><div><strong>Riya</strong><small>Pet Parent</small></div></a></div>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar"><div class="crumb"><a href="dashboard.html">←</a><span>PawPal › Dashboard</span></div><div class="top-actions"><button aria-label="Notifications">♧</button><span class="avatar">👩🏻</span></div></header>
+      <header class="page-heading"><div><h1>Pet Profile &amp; Health Records</h1><p><i></i> Profile verified &amp; synced with 24×7 triage network</p></div><span class="emergency-tag">● &nbsp;Emergency Ready · ID #9851-410</span></header>
+
+      <div class="dashboard-grid">
+        <div class="profile-column">
+          <section class="pet-profile-card">
+            <div class="pet-portrait"><span>🐶</span><b>🐾</b></div>
+            <h2>Biscuit</h2><p class="pet-facts">3 yrs &nbsp;·&nbsp; Golden Retriever &nbsp;·<br /> 28 kg</p>
+            <div class="pet-switcher"><span>◉ Biscuit (Active)</span><a href="#add-pet">+ Add</a></div>
+            <a class="edit-button" href="#edit">✎ Edit profile</a>
+            <p class="microchip">Microchip ID: #985141002349812<br /><strong>● Guardian Plan Active</strong></p>
+          </section>
+          <section class="vitals-card"><header><h2>Vitals Track</h2><small>Logged 3d ago</small></header><div class="vitals-grid"><div><small>Resting Heart</small><strong>78 <em>bpm</em></strong><span>✓ Normal</span></div><div><small>Body Score</small><strong>5 <em>/ 9</em></strong><span>✓ Ideal</span></div></div></section>
+        </div>
+
+        <div class="records-column">
+          <div class="record-top-grid">
+            <section class="record-card allergy-card"><header><span class="record-icon shield">♙</span><b class="attention-tag">High Attention</b></header><h2>Allergies &amp; Sensitivities</h2><p>No known drug allergies. Sensitive to poultry protein and dark chocolate (theobromine).</p><small class="flag-note">ⓘ Always flagged during clinic intake check-ins</small></section>
+            <section class="record-card vaccine-card"><header><span class="record-icon">♜</span><b class="updated-tag">✓ Up to date</b></header><h2>Vaccines Record</h2><dl><div><dt>DHPP Core</dt><dd>Valid til Nov 2025</dd></div><div><dt>Bordetella</dt><dd>Valid til Mar 2025</dd></div><div class="due"><dt>Rabies booster</dt><dd>In 5 days</dd></div></dl><a href="#immunization">View immunization card →</a></section>
+          </div>
+
+          <section class="vet-note">
+            <header><span class="note-icon">▤</span><div><h2>Recent Vet Note</h2><p>Dr. Mehta · Sunny Paws Emergency Care</p></div><small>Last Visit: Oct 14</small></header>
+            <blockquote>“Biscuit responded well to emesis after chocolate ingestion. Hydration levels restored. Keep on bland diet for 48 hrs. Continue monitoring stool consistency and lethargy.”</blockquote>
+            <footer><span>▧ Rx: Proviable Paste (1 dose twice daily)</span><a href="#download">♧ Download discharge PDF</a></footer>
+          </section>
+
+          <section class="upcoming-care"><header><h2>Upcoming care <span>3</span></h2><a href="#schedule">View full schedule ›</a></header><div class="care-cards">
+            <article class="care-card green"><div><span>♧</span><h3>Rabies<br />vaccine</h3></div><b>In 5<br />days</b><small>⌖ Sunny Paws Vet</small></article>
+            <article class="care-card yellow"><div><span>▣</span><h3>Tick<br />medicine</h3></div><b>Tomorrow</b><small>◷ Morning · Monthly dose</small></article>
+            <article class="care-card purple"><div><span>♧</span><h3>Grooming<br />&amp; Bath</h3></div><b>Saturday</b><small>◷ 11:00 AM · PawSpa Kalol</small></article>
+          </div></section>
+        </div>
+      </div>
+      <footer class="app-footer"><a href="#logout">↪ &nbsp;Log out of Riya's account</a><span>PawPal Care Network v4.8 &nbsp;•&nbsp; Privacy &amp; Data</span></footer>
+    </section>
+  </main>
+</body>
+</html>
