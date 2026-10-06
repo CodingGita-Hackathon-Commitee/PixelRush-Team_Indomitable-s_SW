@@ -9,7 +9,7 @@ button { font: inherit; }
 .brand-mark { width: 20px; height: 20px; display: grid; place-items: center; border-radius: 50%; background: #ffede3; color: var(--burnt); font-size: 10px; }
 .brand strong { font-size: 13px; letter-spacing: -.04em; }
 .sidebar nav { display: grid; gap: 5px; }
-.nav-item { height: 30px; display: flex; align-items: center; gap: 8px; padding: 0 8px; border-radius: 8px; color: #604e47; font-size: 9px; }
+.nav-item { height: 30px; display: flex; align-items: center; gap: 08px; padding: 0 8px; border-radius: 8px; color: #604e47; font-size: 9px; }
 .nav-item span { width: 13px; text-align: center; font-size: 12px; }
 .nav-item.active { background: #fff7f2; }
 .sidebar-switch { position: absolute; bottom: 48px; left: 16px; right: 16px; display: flex; justify-content: center; align-items: center; gap: 5px; padding: 5px 3px; border: 1px solid #f5d9ce; border-radius: 18px; background: #fff4ee; color: #765c51; font-size: 8px; }
